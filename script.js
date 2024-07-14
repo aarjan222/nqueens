@@ -1,5 +1,5 @@
-const n = 8;
-const board = Array.from({ length: n }, () => Array(n).fill(0));
+let n = 8;  // Default board size
+let board = Array.from({ length: n }, () => Array(n).fill(0));
 
 function isSafe(board, row, col) {
     for (let i = 0; i < col; i++) {
@@ -55,4 +55,10 @@ function checkWin() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', drawBoard);
+function changeBoardSize(newSize) {
+    n = newSize;
+    board = Array.from({ length: n }, () => Array(n).fill(0));
+    drawBoard();
+}
+
+document.addEventListener('DOMContentLoaded', () => drawBoard());

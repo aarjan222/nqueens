@@ -8,6 +8,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -17,6 +18,7 @@
 
         table {
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
 
         td {
@@ -39,10 +41,25 @@
         .queen {
             color: red;
         }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="buttons">
+        <button onclick="changeBoardSize(4)">4x4</button>
+        <button onclick="changeBoardSize(8)">8x8</button>
+        <button onclick="changeBoardSize(10)">10x10</button>
+    </div>
     <table id="chessboard"></table>
     <script src="script.js"></script>
 </body>
